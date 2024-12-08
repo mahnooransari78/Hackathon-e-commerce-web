@@ -95,7 +95,7 @@ export default function ProductDetails() {
             <h3 className="text-2xl font-bold text-gray-800 mb-8">Related Products</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <img
+                <Image
                   src="/related1.jpg"
                   alt="Related Product 1"
                   className="w-full h-auto rounded-lg shadow-md"
