@@ -23,7 +23,6 @@ function HeroSection() {
           />
         </div>
       </div>
-
       {/* Center Column: Content (Title, Description, Button) */}
       <div className="md:w-1/3 max-w-lg text-center md:text-left flex flex-col justify-center">
         <p className="text-sm text-pink-500 font-medium">
@@ -43,7 +42,7 @@ function HeroSection() {
         </Link>
       </div>
 
-      {/* Right Column: Chair Image */}
+      {/* Right Column: Chair Image , discount*/}
       <div className="md:w-1/3 flex justify-center items-center relative">
         
                  <div className='relative w-full flex justify-center sm:justify-end items-center  mx-auto'>
@@ -74,10 +73,8 @@ function HeroSection() {
                    </div>
                  </div>
         </div>
-        
-      {/* </div> */}
 
-      {/* Navigation Dots */}
+      {/*  Dots */}
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2  flex space-x-2">
         <span className="w-[10px] h-[9.89px] border-2 border-[#FB2E86] hover:bg-[#FB2E86]  rotate-45"></span>
         <span className="w-[10px] h-[9.89px] border-2 border-[#FB2E86] hover:bg-[#FB2E86] rotate-45"></span>

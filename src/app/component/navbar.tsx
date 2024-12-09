@@ -39,11 +39,21 @@ export default function Navbar() {
           <li className="flex flex-row items-center text-[#FB2E86]">
             <Link href="/">Home </Link>
           </li>
-          <li><Link href="/pages">Pages</Link></li>
-          <li><Link href="/account">Products</Link></li>
-          <li><Link href="/blog">Blog</Link></li>
-          <li><Link href="/shop">Shop</Link></li>
-          <li><Link href="/login" className="text-[16px] font-lato font-normal leading-[20px] text-left">Contact</Link></li>
+          <li>
+            <Link href="/pages">Pages</Link>
+          </li>
+          <li>
+            <Link href="/product">Products</Link>
+            </li>
+          <li>
+            <Link href="/blog">Blog</Link>
+            </li>
+          <li>
+            <Link href="/shop">Shop</Link>
+            </li>
+          <li>
+            <Link href="/contact" className="text-[16px] font-lato font-normal leading-[20px] text-left">Contact</Link>
+            </li>
         </ul>
       </div>
 
