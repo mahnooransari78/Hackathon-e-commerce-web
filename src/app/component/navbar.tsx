@@ -58,7 +58,7 @@ export default function Navbar() {
       </div>
 
       {/* Search Bar Section */}
-      <div className="flex justify-end mt-4 sm:mt-0 w-full sm:w-auto">
+      <div className=" lg:block justify-end mt-4 hidden">
         <Search />
       </div>
     </section>

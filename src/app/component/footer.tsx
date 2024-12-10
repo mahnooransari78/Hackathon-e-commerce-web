@@ -1,5 +1,4 @@
- 
-import React from 'react'
+ import React from 'react'
 import {FaFacebook} from 'react-icons/fa'
 import { RxInstagramLogo } from "react-icons/rx";
 import {FaLinkedin } from 'react-icons/fa'
@@ -45,7 +44,7 @@ function Footer() {
         <p className=" font-semibold text-black tracking-widest text-xl mb-3 ml-6">
           CATEGORIES
         </p>
-        <ul className="list-none mb-10 leading-10 text-gray-400">
+        <ul className="list-none leading-10 text-gray-400">
           <li>
             <a className="text-gray-400 hover:text-gray-800  ml-6">Laptops & Computers</a>
           </li>
@@ -119,8 +118,7 @@ function Footer() {
       <p className="text-sm text-gray-500 text-center sm:ml-6 sm:mt-0 mt-4">
         © 2024 Hekto —
         <a
-          href="https://twitter.com/knyttnev"
-          rel="noopener noreferrer"
+          href=""
           className="text-gray-600 ml-1"
           target="_blank"
         >
