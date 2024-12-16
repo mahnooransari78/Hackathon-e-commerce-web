@@ -7,6 +7,7 @@ import Navbar from "./component/navbar";
 import Panal from "./component/panal";
 import React from 'react'
 import Trending from "./component/tranding";
+import UniqueFeature from './component/uniqe-Feature'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Containers />
       <Products />
       <Offer />
+      <UniqueFeature />
       <Trending />
       <Footer /> 
     </main>

@@ -1,133 +1,152 @@
-// import Image from "next/image";
+import Image from "next/image";
+import pic from '@/app/Image/pic.png';
 import React from "react";
 import Navbar from '../component/navbar';
 import Panal from '../component/panal';
 import Footer from '../component/footer';
 
-const Contact = () =>{
-    return (
+const Contact = () => {
+  return (
     <div>
       <Panal />
       <Navbar />
-      <section className="">
-           <header className="bg-gray-100 py-6">
+      <section>
+        {/* Header */}
+        <header className="bg-gray-100 py-6">
           <div className="container mx-auto px-4">
-            <h1 className="text-2xl font-bold text-blue-900">Contact Us</h1>
+            <h1 className="text-2xl font-bold text-blue-900">
+              {"Contact Us"}
+            </h1>
             <p className="text-sm text-gray-500">
-              Home / Pages / <span className="text-pink-500">Contact Us</span>
+              {"Home / Pages / "}<span className="text-pink-500">
+                {"Contact Us"}
+              </span>
             </p>
           </div>
-        </header> 
+        </header>
 
-        <div className="flex border-2  mt-20 ml-[10%]">
-                       {/* 1 rigth colum */}
-                    
-          <div >            
-            <div className="justify-start w-[50%] border-2 ">
-                <h4 className="text-4xl">
-                  {"Information About us"}  
-                </h4> 
-               <p className="font-semibold text-base text-[#8A8FB9] w-[500px] mt-8">
-                 {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis    neque ultrices mattis aliquam, malesuada diam est. Malesuada sem    tristique amet erat vitae eget dolor lobortis. Accumsan faucibus    vitae lobortis quis bibendum quam."}
-               </p> 
-               <div className="flex gap-4 mt-10">
-                 <span className="w-[25px] h-[25px] rounded-full bg-[#8A8FB9]"></span>
-                 <span className="w-[25px] h-[25px] rounded-full bg-[#8A8FB9]"></span>
-                 <span className="w-[25px] h-[25px] rounded-full bg-[#8A8FB9]"></span>   
-               </div>
-            </div> 
+        {/* Main Content */}
+        <div className="container mx-auto px-4 mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left Column */}
+          <div>
+            <h4 className="text-4xl text-[#151875] font-semibold">
+              {"Information About us"}
+            </h4>
+            <p className="font-semibold text-base text-[#8A8FB9] mt-4">
+              {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis neque ultrices mattis aliquam, malesuada diam est. Malesuada sem tristique amet erat vitae eget dolor lobortis."}
+            </p>
+            <div className="flex gap-4 mt-6">
+              <span className="w-6 h-6 rounded-full bg-[#5625DF]"></span>
+              <span className="w-6 h-6 rounded-full bg-[#FB2E86]"></span>
+              <span className="w-6 h-6 rounded-full bg-[#37DAF3]"></span>
+            </div>
 
-            <div className="justify-start mt-20">
-                <h4 className="text-4xl">
-                  {"Get In Touch"}  
-                </h4> 
-               <p className="font-semibold text-base text-[#8A8FB9] w-[500px] mt-8">
-                 {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis    neque ultrices mattis aliquam, malesuada diam est. "}
-               </p> 
-               
-               <form className="mt-9">
-                <input type="text" placeholder="Your Name*" className="border-2 border-gray-400 w-[255px] h-[45px] rounded-[3px]"  />
-                <input type="text" placeholder="Your E-mail" className="border-2 border-gray-400 ml-3 w-[265px] h-[45px] rounded-[3px]" />
-                <input type="text" placeholder="Your Subject*" className="block border-2 border-gray-400 mt-5 w-[534px] h-[45px] rounded-[3px]"/>
-                 <textarea name="Type your Messge" id="" placeholder="Type your Messge" className="border-2 border-gray-400 mt-5 w-[534px] h-[166px]"></textarea>
-                 
-                 <button className="lg:mt-2 block xl:mt-0 flex-shrink-0    text-white border-0 py-2 px-6 focus:outline-none bg-[#FB2E86]  rounded">
-                    {"Send Mail"}
-                 </button>
-               </form>
-            </div> 
+            <div className="mt-16 lg:mt-40">
+              <h4 className="text-4xl text-[#151875] font-semibold">
+                {"Get In Touch"}
+              </h4>
+              <p className="font-semibold text-base text-[#8A8FB9] mt-4">
+                {"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis neque ultrices mattis aliquam."}
+              </p>
+              <form className="mt-6 space-y-4">
+                <div className="flex flex-wrap gap-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name*"
+                    className="border-2 block border-[#d3d6f5] w-full md:w-[49%] h-12 px-3 rounded-sm"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your E-mail"
+                    className="border-2  border-[#d3d6f5] w-full md:w-[49%] h-12 px-3 rounded-sm"
+                  />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Your Subject*"
+                  className="border-2 border-[#d3d6f5] w-full h-12 px-3 rounded-sm"
+                />
+                <textarea
+                  placeholder="Type your Message"
+                  className="border-2 border-[#d3d6f5] w-full h-40 px-3 rounded-sm"
+                ></textarea>
+                <button className="bg-[#FB2E86] text-white py-3 px-6 rounded-sm">
+                  {"Send Mail"}
+                </button>
+              </form>
+            </div>
           </div>
-                                      {/* left colum */}
-           <div className="border-2 w-[50%] justify-start">
-                <h4 className="text-4xl">
-                  {"Information About us"}  
-                </h4> 
-                               {/* div1 */}
-                <div className="flex">
-                  <div className=" mt-10 flex gap-5">
-                    <div className="flex gap-1">
-                      <span className="w-[45px] h-[45px] rounded-full bg-[#FB2E86]"></span>
-                       <div className=" w-[172px] h-[53px] border-2 ">
-                        <p className="w-[130px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"Tel:877-67-88-99"}
-                        </p>
-                        <p className="w-[172px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"E-mail:shop@store.com"}
-                        </p>
-                       </div>
-                      </div>
-                    <div className="flex  gap-1">
-                      <div className="w-[45px] h-[45px] rounded-full bg-[#FB2E86]"></div>
-                       <div className="w-[172px] h-[53px] border-2 ">
-                        <p className="w-[130px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"Support Forum"}
-                        </p>
-                        <p className="w-[130px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"For over 24hr"}
-                        </p>
-                       </div>
-                     </div>
-                    </div>
-                </div>
-                               {/* div2 */}
+
+          {/* Right Column */}
+          <div>
+            <h4 className="text-4xl text-[#151875] font-semibold">
+              {"Contact Way"}
+            </h4>
+            <div className="mt-10 space-y-6 ">
+              <div className="md:flex md:gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#5625DF]"></div>
                 <div>
-                  <div className=" mt-10 flex gap-5">
-                    <div className="flex gap-1">
-                      <span className="w-[45px] h-[45px] rounded-full bg-[#FB2E86]"></span>
-                       <div className=" w-[172px] h-[53px] border-2 ">
-                        <p className="w-[130px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"Tel:877-67-88-99"}
-                        </p>
-                        <p className="w-[172px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"E-mail:shop@store.com"}
-                        </p>
-                       </div>
-                      </div>
-                    <div className="flex  gap-1">
-                      <div className="w-[45px] h-[45px] rounded-full bg-[#FB2E86]"></div>
-                       <div className="w-[172px] h-[53px] border-2 ">
-                        <p className="w-[130px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"Support Forum"}
-                        </p>
-                        <p className="w-[130px] h-6 font-semibold text-base text-[#8A8FB9]">
-                          {"For over 24hr"}
-                        </p>
-                       </div>
-                     </div>
-                    </div>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"Tel: 877-67-88-99"}
+                  </p>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"E-mail: shop@store.com"}
+                  </p>
                 </div>
-                {/* <Image 
-                src={""}
-                alt=''
-                width={567}
-                height={321}
-                /> */}
-            </div>                           
+              </div>
+              <div className="flex items-center mt-5 md:mt-0 gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#FB2E86]"></div>
+                <div>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"Support Forum"}
+                  </p>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"For over 24hr"}
+                  </p>
+                </div>
+              </div>
+              </div>
+              <div className="md:flex md:gap-4 ">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#FFB265]"></div>
+                <div>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"20 Margaret st, London"}
+                  </p>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"Great Britain, 3NM98-LK"}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center mt-5 md:mt-0 gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#1BE982]"></div>
+                <div>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"Free standard shipping"}
+                  </p>
+                  <p className="text-base text-[#8A8FB9]">
+                    {"on all orders."}
+                  </p>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div className="mt-16 lg:mt-40">
+              <Image
+                src={pic}
+                alt="Contact"
+                width={500}
+                height={300}
+                className="rounded-lg "
+              />
+            </div>
+          </div>
         </div>
-       </section>
-       <Footer />
+      </section>
+      <Footer />
     </div>
-    );
-}
+  );
+};
 
 export default Contact;

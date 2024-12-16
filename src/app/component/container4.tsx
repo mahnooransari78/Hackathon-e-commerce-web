@@ -21,7 +21,7 @@ const Offer = () => {
                 alt='bus'
                 width={65}
                 height={65}
-                className='m-10'
+                className='m-10 ml-28'
             />
             <div className='w-full text-center'>
                 <p className='text-[#151875] text-xl leading-[30px] font-semibold'>
@@ -39,7 +39,7 @@ const Offer = () => {
                 alt='cashback'
                 width={65}
                 height={65}
-                className='m-10'
+                className='m-10 ml-28'
             />
             <div className='w-full text-center'>
                 <p className='text-[#151875] text-xl leading-[25.78px] font-semibold'>
@@ -57,7 +57,7 @@ const Offer = () => {
                 alt='hours'
                 width={65}
                 height={65}
-                className='m-10'
+                className='m-10 ml-28'
             />
             <div className='w-full text-center'>
                 <p className='text-[#151875] text-xl leading-[25.78px] font-semibold'>
@@ -75,7 +75,7 @@ const Offer = () => {
                 alt='premium'
                 width={65}
                 height={65}
-                className='m-10'
+                className='m-10 ml-28'
             />
             <div className='w-full text-center'>
                 <p className='text-[#151875] text-xl leading-[25.78px] font-semibold'>
