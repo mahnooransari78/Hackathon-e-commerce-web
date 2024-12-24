@@ -1,22 +1,43 @@
+'use client';
 import Image from "next/image";
 import featured1  from '@/app/Image/featured1.png';
 import featured2  from '@/app/Image/featured2.png';
 
 import featured3  from '@/app/Image/featured3.png';
-
 import footer from '@/app/Image/footer logo.png';
 import { LiaSearchPlusSolid } from "react-icons/lia";
 import { GoHeart } from "react-icons/go";
 import { BsCart } from "react-icons/bs";
+//  animation
+import { Fade } from 'react-awesome-reveal';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import React from "react";
 
 const Containers = () =>{
+  const ref = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+      target: ref,
+      offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
     return (
         <section className="flex flex-col justify-center items-center mt-20 px-4 md:px-12">
-  <h2 className="font-josefin-sans text-4xl font-bold text-[#151875] mb-12">
-    Featured Products
-  </h2>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <Fade direction='up' delay={200} cascade damping={1e-1} triggerOnce={true}>
+              <h2 className="font-josefin-sans text-4xl font-bold text-[#151875] mb-12">
+                Featured Products
+              </h2>
+            </Fade>
+          
+  
+           <motion.div
+  ref={ref}
+        style={{
+            scale: scaleProgress,
+            opacity: opacityProgress,
+        }}
+   className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     
     <div className="border w-[250px] border-gray-200 rounded-lg shadow-md bg-white overflow-hidden group relative transition-all duration-300 hover:shadow-lg">
         {/* Image Section */}
@@ -198,7 +219,7 @@ const Containers = () =>{
 
       
 
-  </div>
+           </motion.div>
 </section>
 
     );

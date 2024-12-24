@@ -40,7 +40,7 @@ export default function Navbar() {
             <Link href="/">Home </Link>
           </li>
           <li>
-            <Link href="/pages">Pages</Link>
+            <Link href="/Page">Pages</Link>
           </li>
           <li>
             <Link href="/product">Products</Link>

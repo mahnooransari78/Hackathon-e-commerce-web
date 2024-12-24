@@ -1,19 +1,41 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
 import bus from '@/app/Image/bus.png';
 import   cashback   from '@/app/Image/cashback 1 (1).png'
 import  hours  from '@/app/Image/hours.png'
-import premium from '@/app/Image/premium-quality 1.png'
+import premium from '@/app/Image/premium-quality 1.png';
+            // animation
+import { Fade } from 'react-awesome-reveal'
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Offer = () => {
+     const ref = useRef<HTMLDivElement>(null);
+        const { scrollYProgress } = useScroll({
+          target: ref,
+          offset: ["0 1", "1.33 1"],
+      });
+      const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+      const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+    
     return (
         <section className="px-4 sm:px-8 md:px-16 lg:px-20">
+             <Fade direction='up' delay={200} cascade damping={1e-1} triggerOnce={true}>
+             <p className='w-full text-center mt-20 text-3xl sm:text-4xl leading-[49.22px] font-josefin-sans text-[#151875]'>
+              {" What Shopex Offer!"}
+             </p>
+             </Fade>
+     
+    
 
-    <p className='w-full text-center mt-20 text-3xl sm:text-4xl leading-[49.22px] font-josefin-sans text-[#151875]'>
-        What Shopex Offer!
-    </p>
-
-    <div className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-6 sm:gap-10 mx-auto'>
+    <motion.div 
+    ref={ref}
+    style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+    }}
+    className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-6 sm:gap-10 mx-auto'>
         
         <div className='w-full sm:w-[270px] h-[320px] shadow-lg rounded-lg'>
             <Image 
@@ -87,7 +109,7 @@ const Offer = () => {
             </div>
         </div>
 
-    </div>
+    </motion.div>
 </section>
 
     );

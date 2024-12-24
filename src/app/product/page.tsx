@@ -7,8 +7,6 @@ import Footer from '../component/footer';
 import Rectangle1 from '@/app/Image/Rectangle1.png'
 import Rectangle2 from '@/app/Image/Rectangle 2.png'
 import Rectangle3 from '@/app/Image/Rectangle 3.png'
-
-
 import us from '@/app/Image/us bg.png'
 import small from '@/app/Image/small.png'
 
@@ -34,7 +32,7 @@ export default function ProductDetails() {
         <main className="container mx-auto px-4 py-12">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Images */}
-            <div className="flex-1 grid grid-cols-3 gap-4">
+            <div className="flex-1 grid grid-cols-1 gap-4">
             <div className="flex gap-4">
                 <Image
                   src={us}
@@ -96,8 +94,7 @@ export default function ProductDetails() {
             <div className="mt-4">
               <h3 className="text-lg font-bold text-gray-800">Product Description</h3>
               <p className="text-gray-600 mt-2">
-                This is a premium-quality chair made with high-grade materials.
-                Comfortable, stylish, and long-lasting for any space.
+                {"This is a premium-quality chair made with high-grade materials.Comfortable, stylish, and long-lasting for any space."}
               </p>
             </div>
           </div>
@@ -110,12 +107,12 @@ export default function ProductDetails() {
                 <Image
                   src={Rectangle2}
                   alt="Related Product 1"
-                  className="w-full h-auto rounded-lg shadow-md"
+                  className="w-full h-auto shadow-md"
                 />
                 <p className="mt-4 text-gray-800 font-semibold">Product Name 1</p>
                 <p className="text-pink-500">$120</p>
               </div>
-              <div className="text-center">y
+              <div className="text-center">
                 <Image
                   src={Rectangle3}
                   alt="Related Product 2"
