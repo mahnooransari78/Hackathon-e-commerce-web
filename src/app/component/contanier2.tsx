@@ -10,8 +10,36 @@ import black1 from "@/app/Image/black1.png";
 import { Fade } from 'react-awesome-reveal';
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 export default function Products() {
+
+  const product = [
+     {
+      id:5,
+      image :featured1 ,
+     },
+     {
+      id:6,
+      image :chair6 ,
+     },
+     {
+      id:7,
+      image :musterd ,
+     },
+     {
+      id:8,
+      image :whitechair ,
+     },
+     {
+      id:9,
+      image :whitwood ,
+     },
+     {
+      id:10,
+      image :black1 ,
+     },
+  ];
   const ref = useRef<HTMLDivElement>(null);
       const { scrollYProgress } = useScroll({
         target: ref,
@@ -52,13 +80,14 @@ export default function Products() {
       className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Single Product Card */}
-          {[chair6, musterd, whitechair, black1, featured1, whitwood].map((item, index) => (
+          {product.map((product, index) => (
             <div
               key={index}
               className="hover:shadow-lg mb-10 transition hover:-translate-y-2"
             >
+              <Link href={`${product.id}`} >
               <div className="relative bg-[#EEEFFB] w-full justify-center items-center h-[250px] overflow-hidden">
-                <Image src={item} alt="Product" width={200} height={200} className="ml-20 mt-10" />
+                <Image src={product.image} alt="Product" width={200} height={200} className="ml-20 mt-10" />
                 <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
                   {"Sales"}
                 </span>
@@ -74,6 +103,7 @@ export default function Products() {
                   <p className="text-[#FB2448] text-xs lg:text-sm line-through">{"$65.00"}</p>
                 </div>
               </div>
+              </Link>
             </div>
           ))}
         </div>

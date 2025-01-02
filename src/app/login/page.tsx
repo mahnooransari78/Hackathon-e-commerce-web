@@ -1,14 +1,9 @@
 import Image from 'next/image';
 import image from '@/app/Image/image 1174 (3).png'
-import Panal from '../component/panal';
-import Footer from '../component/footer';
-import Navbar from '../component/navbar';
 
 export default function MyAccount() {
     return (
-      <>
-      <Panal />
-      <Navbar />
+ 
       <div className="bg-gray-50 min-h-screen">
         {/* Header */}
         <header className="bg-gray-100 py-6">
@@ -76,8 +71,6 @@ export default function MyAccount() {
           </div>
         </main>
       </div>
-      <Footer />
-      </>
     );
   }
   

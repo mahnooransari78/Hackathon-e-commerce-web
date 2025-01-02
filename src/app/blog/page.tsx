@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import Navbar from '../component/navbar';
-import Panal from '../component/panal';
-import Footer from '../component/footer';
 import image from '@/app/Image/image 1174 (3).png'
 import girl from '@/app/Image/girl.png'
 import girl1 from '@/app/Image/girl1.png'
@@ -11,9 +8,7 @@ import girl2 from '@/app/Image/girl2.png'
 
 export default function BlogPage() {
     return (
-        <>
-        <Panal />
-        <Navbar />
+
       <div className="bg-gray-50 min-h-screen">
         {/* Header */}
         <header className="bg-gray-100 py-6">
@@ -150,7 +145,5 @@ export default function BlogPage() {
           </div>
         </footer>
       </div>
-      <Footer />
-      </>
     );
   }

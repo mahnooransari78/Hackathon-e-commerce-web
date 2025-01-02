@@ -8,11 +8,9 @@ import musterd from "@/app/Image/musterd.png";
 import whitechair from "@/app/Image/whitechair.png";
 import whitwood from "@/app/Image/whitwood.png";
 import black1 from "@/app/Image/black1.png";
-import Navbar from '../component/navbar';
-import Panal from '../component/panal';
-import Footer from '../component/footer';
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
 
 
 
@@ -20,72 +18,84 @@ import { useRef } from "react";
 const Page = () => {
   const products = [
     {
+      id:11,
       image: musterd,
       name: "Stylish Mustard Chair",
       price: "$30.00",
       oldPrice: "$60.00",
     },
     {
+      id:12,
       image: whitechair,
       name: "Classic White Chair",
       price: "$40.00",
       oldPrice: "$70.00",
     },
     {
+      id:13,
       image: black1,
       name: "Premium Black Bag",
       price: "$55.00",
       oldPrice: "$90.00",
     },
     {
+      id:14,
       image: featured1,
       name: "Elegant Pink Sofa",
       price: "$80.00",
       oldPrice: "$120.00",
     },
     {
+      id:15,
       image: whitwood,
       name: "Wooden Dining Chair",
       price: "$45.00",
       oldPrice: "$75.00",
     },
     {
+      id:16,
       image: musterd,
       name: "Stylish Mustard Chair",
       price: "$30.00",
       oldPrice: "$60.00",
     },
     {
+      id:17,
       image: whitechair,
       name: "Classic White Chair",
       price: "$40.00",
       oldPrice: "$70.00",
     },
     {
+      id:18,
       image: black1,
       name: "Premium Black Bag",
       price: "$55.00",
       oldPrice: "$90.00",
     },
     {
+      id:19,
       image: featured1,
       name: "Elegant Pink Sofa",
       price: "$80.00",
       oldPrice: "$120.00",
     },
     {
+      id:20,
       image: musterd,
       name: "Stylish Mustard Chair",
       price: "$30.00",
       oldPrice: "$60.00",
     },
     {
+      id:21,
       image: whitechair,
       name: "Classic White Chair",
       price: "$40.00",
       oldPrice: "$70.00",
     },
     {
+      id:22,
       image: black1,
       name: "Premium Black Bag",
       price: "$55.00",
@@ -105,8 +115,6 @@ const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   return (
     <section>
       {/* Header Section */}
-      <Panal />
-      <Navbar />
       <header className="bg-gray-100 py-6">
         <div className="container mx-auto px-4">
           <h1 className="text-2xl md:text-3xl font-bold text-blue-900">
@@ -177,6 +185,7 @@ const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
               key={index}
               className="hover:shadow-lg"
             >
+              <Link href={`${product.id}`}>
               {/* Image Section */}
               <div className="relative bg-[#EEEFFB] w-full h-[250px] sm:h-[280px] overflow-hidden flex items-center justify-center">
                 <Image
@@ -206,12 +215,12 @@ const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
                   </p>
                 </div>
               </div>
+              </Link>
             </div>
           ))}
         </div>
       </motion.div>
       <h1 className="font-extrabold text-center text-8xl">{"PENDING work"}</h1>
-      <Footer />
     </section>
   );
 };

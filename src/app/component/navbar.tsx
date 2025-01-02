@@ -13,6 +13,8 @@ export default function Navbar() {
   };
 
   return (
+    <header>
+     
     <section className="flex flex-col sm:flex-row justify-around items-center p-4">
       {/* Logo and Navigation Section */}
       <div className="flex flex-col sm:flex-row justify-between sm:justify-start items-center space-y-4 sm:space-x-8 w-full sm:w-auto">
@@ -62,5 +64,6 @@ export default function Navbar() {
         <Search />
       </div>
     </section>
+    </header>
   );
 }

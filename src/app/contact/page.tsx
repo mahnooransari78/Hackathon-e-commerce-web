@@ -1,15 +1,10 @@
 import Image from "next/image";
 import pic from '@/app/Image/pic.png';
 import React from "react";
-import Navbar from '../component/navbar';
-import Panal from '../component/panal';
-import Footer from '../component/footer';
 
 const Contact = () => {
   return (
-    <div>
-      <Panal />
-      <Navbar />
+    
       <section>
         {/* Header */}
         <header className="bg-gray-100 py-6">
@@ -144,8 +139,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <Footer />
-    </div>
   );
 };
 

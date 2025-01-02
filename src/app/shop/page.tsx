@@ -8,15 +8,12 @@ import shop4 from "@/app/Image/shop4.png";
 import shop5 from "@/app/Image/shop5.png";
 import shop6 from "@/app/Image/shop6.png";
 import shop7 from "@/app/Image/shop7.png";
-import Panal from "../component/panal";
 import { FaList } from "react-icons/fa";
 import { HiMiniSquares2X2 } from "react-icons/hi2";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import { LiaSearchPlusSolid } from "react-icons/lia";
 import { GoHeart } from "react-icons/go";
 import { BsCart } from "react-icons/bs";
-import Navbar from "../component/navbar";
-import Footer from "../component/footer";
 import { Fade } from "react-awesome-reveal";
 
 const Shop = () => {
@@ -54,9 +51,6 @@ const Shop = () => {
     <>
       <section>
         {/* Header Section */}
-        <Panal />
-        <Navbar />
-
         <header className="bg-gray-100 py-6">
           <div className="container mx-auto px-4">
             <h1 className="text-2xl md:text-3xl font-bold text-blue-900">
@@ -177,7 +171,6 @@ const Shop = () => {
                 </div>
               ))}
             </Fade>
-            <Footer />
           </div>
         </div>
       </section>

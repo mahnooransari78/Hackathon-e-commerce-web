@@ -2,14 +2,10 @@
 import React from 'react'
 import Image from 'next/image';
 import error from '@/app/Image/error.png'
-import Panal from '../component/panal';
-import Footer from '../component/footer';
-import Navbar from '../component/navbar';
+
 const Error =()=> {
   return (
-    <>
-    <Panal />
-    <Navbar />
+  
     <section className="flex flex-col items-center justify-center min-h-screen ">
   {/* Header */}
   <div className="text-start  bg-[#F6F7FB]">
@@ -52,8 +48,6 @@ const Error =()=> {
   />
   </div>
 </section>
-<Footer />
-</>
   )
 }
 
