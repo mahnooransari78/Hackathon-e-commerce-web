@@ -5,12 +5,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-interface Products{
-  id:string,
-  name:string,
-
+interface Products {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  image: {
+    asset: {
+      url: string;
+    };
+  };
 }
 export default async function Page (){
 
@@ -86,20 +92,21 @@ export default async function Page (){
      
      className="container mx-auto px-4 mt-20">
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-         {product.map((product: { id: any; image: { asset: { url: string | StaticImport; }; }; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined; price: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Iterable<React.ReactNode> | null | undefined; discountPercentage: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Iterable<React.ReactNode> | null | undefined; }, index:number) => (
+         {product.map((productItems:Products, index:number) => (
            <div
              key={index}
              className="hover:shadow-lg"
            >
-             <Link href={`${product.id}`}>
+             <Link href={`/product/${productItems._id}`}>
              {/* Image Section */}
              <div className="relative bg-[#EEEFFB] w-full h-[250px] sm:h-[280px] overflow-hidden flex items-center justify-center">
                <Image
-                 src={product.image.asset.url}
-                 alt={typeof product.name === "string" ? product.name : "Product Name"}
+                 src={productItems.image.asset.url}
+                 alt={typeof productItems.name === "string" ? productItems.name : "Product Name"}
                  layout="intrinsic"
                  width={200}
                  height={200}
+                 loading='lazy'
                  className="object-contain"
                />
               
@@ -112,10 +119,10 @@ export default async function Page (){
               {/* Pricing */}
               <div className="flex justify-center items-center space-x-3">
                 <p className="text-[#151875] text-base font-semibold">
-                  {product.price}
+                  {productItems.price}
                 </p>
                 <p className="text-[#FB2448] text-sm line-through">
-                  {product.discountPercentage}
+                  {productItems.discountPercentage}
                 </p>
               </div>
             </div>

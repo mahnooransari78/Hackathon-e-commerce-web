@@ -44,7 +44,7 @@ const Tcards = () => {
         {[seat1, seat2, seat3].map((item, index) => (
           <div key={index} className="hover:shadow-lg flex gap-3 items-center">
             <div className="w-[107px] h-[74px] bg-[#F5F6F8] flex justify-center items-center">
-              <Image src={item} alt="chair" width={64} height={71} />
+              <Image src={item} loading='lazy' alt="chair" width={64} height={71} />
             </div>
             <div>
               <p className="text-[#151875] font-semibold">

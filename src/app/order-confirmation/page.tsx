@@ -48,6 +48,7 @@ const OrderConfirmation = () => {
             src={checklist}
             height={50}
             width={50}
+            loading='lazy'
             alt="clock"
             className=""
           />
@@ -59,6 +60,7 @@ const OrderConfirmation = () => {
             src={image}
             alt='logo'
             width={900}
+            loading='lazy'
             height={1114}
             />
           </div>

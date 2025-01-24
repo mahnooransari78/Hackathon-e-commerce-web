@@ -2,12 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
+import { client } from "@/sanity/lib/client";
 
 interface Product {
-  id: number;
-  title: string;
-  price: number;
+  _id: string;
+  name: string;
   description: string;
+  price: number;
+  discountPercentage: number;
+  image: {
+    asset: {
+      url: string;
+    };
+  };
 }
 
 const Cart = () => {
@@ -17,23 +24,34 @@ const Cart = () => {
   // Fetch cart items
   useEffect(() => {
     const fetchCart = async () => {
-      const res = await fetch("/api/cart");
-      const data: Product[] = await res.json();
+      const res = `*[_type == "product"]{
+        _id,
+        name,
+        description,
+        price,
+        discountPercentage,
+        image {
+          asset-> {
+            url
+          }
+        }
+      }`;
+      const data: Product[] = await client.fetch(res);
       setCart(data);
     };
     fetchCart();
   }, []);
 
   // Remove cart items
-  const removeFromCart = async (id: number) => {
+  const removeFromCart = async (_id: string) => {
     await fetch("/api/cart", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id }),
+      body: JSON.stringify({ _id }),
     });
-    setCart(cart.filter((product) => product.id !== id));
+    setCart(cart.filter((product) => product._id !== _id));
   };
 
 //    order place
@@ -74,14 +92,14 @@ return(
             <div>
                 {cart.map((item) =>(
                     <div 
-                    key={item.id}
+                    key={item._id}
                     className="border-b py-2 flex gap-4"
                     >
-                        <h2 className="font-semibold">{item.id}</h2>
-                        <p>{item.title}</p>
+                        <h2 className="font-semibold">{item._id}</h2>
+                        <p>{item.name}</p>
                         <p className="text-lg font-semibold">{`Price: $ ${item.price}`}</p>
                         <button 
-                        onClick={() => removeFromCart(item.id)}
+                        onClick={() => removeFromCart(item._id)}
                         className="bg-pink-500 rounded-md text-white py-2 px-4"
                         >
                             Remove
@@ -113,3 +131,5 @@ return(
   };
 
  export default Cart;
+
+

@@ -1,52 +1,62 @@
 'use client';
 import Image from "next/image";
-import featured1 from "@/app/Image/featured1.png";
-import chair6 from "@/app/Image/chair6.png";
-import musterd from "@/app/Image/musterd.png";
-import whitechair from "@/app/Image/whitechair.png";
-import whitwood from "@/app/Image/whitwood.png";
-import black1 from "@/app/Image/black1.png";
+
 // animation
 import { Fade } from 'react-awesome-reveal';
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+
+
+interface Products {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  image: {
+    asset: {
+      url: string;
+    };
+  };
+}
 
 export default function Products() {
+  
+const [products, setProducts] = useState<Products[]>([]); // Initialize products state
 
-  const product = [
-     {
-      id:5,
-      image :featured1 ,
-     },
-     {
-      id:6,
-      image :chair6 ,
-     },
-     {
-      id:7,
-      image :musterd ,
-     },
-     {
-      id:8,
-      image :whitechair ,
-     },
-     {
-      id:9,
-      image :whitwood ,
-     },
-     {
-      id:10,
-      image :black1 ,
-     },
-  ];
-  const ref = useRef<HTMLDivElement>(null);
-      const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["0 1", "1.33 1"],
-    });
-    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-    const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const query = `*[_type == "product"][0...9] {
+          _id,
+          name,
+          price,
+          category,
+          image {
+            asset -> {
+              url
+            }
+          }
+        }`;
+
+        const fetchedProducts = await client.fetch(query); // Fetch data from Sanity
+
+        if (!fetchedProducts) {
+          throw new Error("Failed to fetch products");
+        }
+
+        setProducts(fetchedProducts); // Store data in state
+      } catch (error) {
+        console.log('Error fetching products:', error);
+      }
+    };
+
+    fetchProduct();
+  }, []);
+
+ 
   return (
     <section className="py-10 px-5">
       {/* Heading */}
@@ -71,23 +81,29 @@ export default function Products() {
       
 
       {/* Products Grid */}
-      <motion.div
-      ref={ref}
-      style={{
-          scale: scaleProgress,
-          opacity: opacityProgress,
-      }}
+      <div
       className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Single Product Card */}
-          {product.map((product, index) => (
+          {products.map((product:Products, index:number) => (
             <div
               key={index}
               className="hover:shadow-lg mb-10 transition hover:-translate-y-2"
             >
-              <Link href={`${product.id}`} >
-              <div className="relative bg-[#EEEFFB] w-full justify-center items-center h-[250px] overflow-hidden">
-                <Image src={product.image} alt="Product" width={200} height={200} className="ml-20 mt-10" />
+              <Link href={`/product/${product._id}`} >
+              <div className="relative bg-[#EEEFFB] mx-auto  w-full justify-center items-center h-[250px] overflow-hidden">
+                {product.image?.asset?.url ? (
+                                <Image
+                                  src={product.image.asset.url}
+                                  alt={product.name}
+                                  className="w-40 h-32 mx-auto mt-11 object-contain justify-center"
+                                  width={150}
+                                  loading='lazy'
+                                  height={150}
+                                />
+                              ) : (
+                                <p>No Image</p>
+                              )}
                 <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
                   {"Sales"}
                 </span>
@@ -107,7 +123,7 @@ export default function Products() {
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

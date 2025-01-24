@@ -28,6 +28,7 @@ export default function BlogPage() {
             <article className="bg-white rounded-lg shadow-md overflow-hidden">
               <Image
                 src={girl}
+                loading='lazy'
                 alt="Blog Post 1"
                 className="w-full h-64 object-cover"
               />
@@ -47,6 +48,7 @@ export default function BlogPage() {
             <article className="bg-white rounded-lg shadow-md overflow-hidden">
               <Image
                 src={girl1}
+                loading='lazy'
                 alt="Blog Post 2"
                 className="w-full h-64 object-cover"
               />
@@ -66,6 +68,7 @@ export default function BlogPage() {
             <article className="bg-white rounded-lg shadow-md overflow-hidden">
               <Image
                 src={girl2}
+                loading='lazy'
                 alt="Blog Post 3"
                 className="w-full h-64 object-cover"
               />
@@ -141,6 +144,7 @@ export default function BlogPage() {
             alt='logo'
             width={900}
             height={1114}
+            loading='lazy'
             />
           </div>
         </footer>

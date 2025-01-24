@@ -133,6 +133,7 @@ const Contact = () => {
                 alt="Contact"
                 width={500}
                 height={300}
+                loading='lazy'
                 className="rounded-lg "
               />
             </div>

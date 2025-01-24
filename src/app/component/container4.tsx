@@ -7,17 +7,8 @@ import  hours  from '@/app/Image/hours.png'
 import premium from '@/app/Image/premium-quality 1.png';
             // animation
 import { Fade } from 'react-awesome-reveal'
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 
 const Offer = () => {
-     const ref = useRef<HTMLDivElement>(null);
-        const { scrollYProgress } = useScroll({
-          target: ref,
-          offset: ["0 1", "1.33 1"],
-      });
-      const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-      const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
     
     return (
         <section className="px-4 sm:px-8 md:px-16 lg:px-20">
@@ -29,12 +20,7 @@ const Offer = () => {
      
     
 
-    <motion.div 
-    ref={ref}
-    style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-    }}
+    <div 
     className='flex flex-col sm:flex-row justify-center items-center mt-10 gap-6 sm:gap-10 mx-auto'>
         
         <div className='w-full sm:w-[270px] h-[320px] shadow-lg rounded-lg'>
@@ -43,6 +29,7 @@ const Offer = () => {
                 alt='bus'
                 width={65}
                 height={65}
+                loading='lazy'
                 className='m-10 ml-28'
             />
             <div className='w-full text-center'>
@@ -61,6 +48,7 @@ const Offer = () => {
                 alt='cashback'
                 width={65}
                 height={65}
+                loading='lazy'
                 className='m-10 ml-28'
             />
             <div className='w-full text-center'>
@@ -79,6 +67,7 @@ const Offer = () => {
                 alt='hours'
                 width={65}
                 height={65}
+                loading='lazy'
                 className='m-10 ml-28'
             />
             <div className='w-full text-center'>
@@ -97,6 +86,7 @@ const Offer = () => {
                 alt='premium'
                 width={65}
                 height={65}
+                loading='lazy'
                 className='m-10 ml-28'
             />
             <div className='w-full text-center'>
@@ -109,7 +99,7 @@ const Offer = () => {
             </div>
         </div>
 
-    </motion.div>
+    </div>
 </section>
 
     );

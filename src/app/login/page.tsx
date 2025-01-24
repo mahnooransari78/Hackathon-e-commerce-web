@@ -67,6 +67,7 @@ export default function MyAccount() {
             alt='logo'
             width={900}
             height={1114}
+            loading='lazy'
             />
           </div>
         </main>

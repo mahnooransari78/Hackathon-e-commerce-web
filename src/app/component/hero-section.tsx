@@ -28,7 +28,8 @@ function HeroSection() {
             src={image}
             alt="Lamp"
             width={387} 
-            height={387} 
+            height={387}
+            loading='lazy' 
             className="object-contain"
           /> 
         </Fade>
@@ -64,7 +65,7 @@ function HeroSection() {
        
         <Fade direction='up' delay={400} cascade damping={1e-1} triggerOnce={true}>
         <Link
-          href="#"
+          href="/products"
           className="inline-block bg-pink-500 text-white lg:w-1/2 md:text-center text-sm font-medium py-3 px- rounded-md mt-6 hover:bg-pink-600 transition-all duration-300"
         >
           { "Shop Now" }
@@ -85,6 +86,7 @@ function HeroSection() {
                      alt='disc'
                      width={136.56}
                      height={138.49}
+                     loading='lazy'
                      className='absolute w-[20%]  top-[15%] left-[80%] sm:left-[85%]'
                    />
                    
@@ -92,18 +94,10 @@ function HeroSection() {
                      src={pink}
                      alt='sofa'
                      width={635}
+                     loading='lazy'
                      height={635}
                      
                    />
-                   {/* <div>
-                   <Image
-                     src={circle}
-                     alt='sofa'
-                     width={635}
-                     height={635}
-                     className="relative "
-                   />
-                   </div> */}
                  </div>
       </Fade>
         

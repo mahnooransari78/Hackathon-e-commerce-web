@@ -24,6 +24,7 @@ const Error =()=> {
       alt="404 Illustration"
       width={1000}
       height={600}
+      loading='lazy'
       className="w-full max-w-[600px] mx-auto"
     />
   </div>

@@ -126,6 +126,7 @@ const Shop = () => {
                     alt=""
                     width={313}
                     height={217}
+                    loading='lazy'
                     className="object-cover h-48"
                   />
                   <div className="mt-4 items-center">

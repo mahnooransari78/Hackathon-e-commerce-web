@@ -1,44 +1,65 @@
 "use client";
 import Image from "next/image";
-import footer from "@/app/Image/footer logo.png";
 import { LiaSearchPlusSolid } from "react-icons/lia";
 import { GoHeart } from "react-icons/go";
 import { BsCart } from "react-icons/bs";
 //  animation
 import { Fade } from "react-awesome-reveal";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
 import Tcards from "./tranding-cards";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+
+interface Products {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  image?: {
+    asset?: {
+      url?: string;
+    };
+  };
+}
 
 const Trending = () => {
-  const Products = [
-    {
-      id: 23,
-      title: "Cantilever Chair",
-      price: "$42.00",
-      image: footer,
-    },
-    {
-      id: 24,
-      title: "Cantilever Chair",
-      price: "$42.00",
-      image: footer,
-    },
-    {
-      id: 25,
-      title: "Cantilever Chair",
-      price: "$42.00",
-      image: footer,
-    },
-    {
-      id: 26,
-      title: "Cantilever Chair",
-      price: "$42.00",
-      image: footer,
-    },
-  ];
+  
+ 
+  const [products, setProducts] = useState<Products[]>([]); // Initialize products state
+  
+    useEffect(() => {
+      const fetchProduct = async () => {
+        try {
+          const query = `*[_type == "product"][5...9] {
+            _id,
+            name,
+            price,
+            category,
+            image {
+              asset -> {
+                url
+              }
+            }
+          }`;
+  
+          const fetchedProducts = await client.fetch(query); // Fetch data from Sanity
+          console.log(fetchedProducts, fetchedProducts.length);
+  
+          if (!fetchedProducts) {
+            throw new Error("Failed to fetch products");
+          }
+  
+          setProducts(fetchedProducts); // Store data in state
+        } catch (error) {
+          console.log('Error fetching products:', error);
+        }
+      };
+  
+      fetchProduct();
+    }, []);
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -68,20 +89,24 @@ const Trending = () => {
         }}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
       >
-        {Products.map((Products, index) => (
+        {products.map((Products:Products, index:number) => (
           <div
             key={index}
             className=" w-[250px] border-gray-200 bg-white overflow-hidden group relative transition-all duration-300 hover:shadow-lg"
           >
             {/* Image Section */}
             <div className="bg-[#F6F7FB] flex justify-center items-center h-56">
-              <Image
-                src={Products.image}
-                alt="Cantilever Chair"
-                className="w-32 h-32 object-contain"
-                width={130}
-                height={150}
-              />
+            {Products.image?.asset?.url ? (
+                <Image
+                  src={Products.image.asset.url}
+                  alt={Products.name}
+                  className="w-32 h-32 object-contain"
+                  width={130}
+                  height={150}
+                />
+              ) : (
+                <p>No Image</p>
+              )}
             </div>
 
             {/* Hover Icons */}
@@ -102,7 +127,7 @@ const Trending = () => {
             {/* Details Section */}
             <div className="p-4 text-center">
               <p className="font-lato text-lg font-bold text-[#FB2E86] mb-2">
-                {Products.title}
+                {Products.name}
               </p>
               <p className="font-josefin text-sm text-gray-600">
                 Code - Y523201
@@ -113,7 +138,7 @@ const Trending = () => {
             </div>
 
             {/* Hover Button */}
-            <Link href={`${Products.id}`}>
+            <Link href={`/product/${Products._id}`}>
               <div className="absolute bottom-0 left-0 w-full h-10 bg-[#FB2E86] text-white flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 View Details
               </div>
@@ -127,3 +152,5 @@ const Trending = () => {
 };
 
 export default Trending;
+
+
