@@ -1,16 +1,8 @@
-"use client";
-import { useUser } from "@clerk/nextjs";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 import Sidebar from "@/app/admin-dashbord/sidebar/page";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
  
-
-  
-
-  
   return (
     <div className="flex">
       <Sidebar />

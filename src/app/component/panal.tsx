@@ -78,9 +78,9 @@ const Panal = () => {
             </li>
             <li className="flex items-center space-x-1">
                 
-                <SignedOut>
+                
             <SignInButton />
-          </SignedOut>
+          
           <SignedIn>
             <UserButton />
           </SignedIn>

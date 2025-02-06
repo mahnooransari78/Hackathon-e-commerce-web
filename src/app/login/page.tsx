@@ -1,18 +1,4 @@
-import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from '@clerk/nextjs'
-const Payment = () => {
-  return (
-     <>
-     <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-     </>
-  )
-}
 
-export default Payment
 // import Image from 'next/image';
 // import image from '@/app/Image/image 1174 (3).png'
 

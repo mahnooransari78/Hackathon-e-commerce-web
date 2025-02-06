@@ -6,7 +6,7 @@ import CartSummary from '@/app/component/CartSummary';
 import CartItem from '../component/CartItem';
 
 interface Product {
-  id: any;
+  
   _id: string;
   name: string;
   description: string;
