@@ -1,6 +1,6 @@
 // import { client } from "@/sanity/lib/client";
 import { client } from "@/sanity/lib/client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 interface Products {
   _id: string;
@@ -38,7 +38,7 @@ export async function GET() {
 }
 
 // POST - Add New Product
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     const newProduct = await req.json();
 
