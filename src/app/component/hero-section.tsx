@@ -17,7 +17,7 @@ import Group from '@/app/Image/Group 130.png';
 
 function HeroSection() {
   return (
-    <section className="relative bg-gray-100 py-10 md:py-20 px-5 md:px-20 flex flex-col md:flex-row items-center justify-between overflow-hidden">
+    <section className="relative  bg-gray-100 py-10 md:py-20 px-5 md:px-20 flex flex-col md:flex-row items-center justify-between overflow-hidden">
       {/* Left Column */}
     
         <div className="md:w-1/4  top-[-350px] left-[-40px] z-10 flex justify-center items-start relative">
