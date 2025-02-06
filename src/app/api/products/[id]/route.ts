@@ -6,7 +6,7 @@ let products = [
 ];
 
 // GET - Fetch Product by ID
-export async function GET({ params }: { params: { id: string } }) {
+export async function GET(req: NextRequest,{ params }: { params: { id: string } }) {
   const product = products.find((p) => p.id === Number(params.id));
   return product
     ? NextResponse.json(product)
@@ -23,7 +23,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 }
 
 // DELETE - Remove Product
-export async function DELETE({ params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest,{ params }: { params: { id: string } }) {
   products = products.filter((p) => p.id !== Number(params.id));
   return NextResponse.json({ message: "Product deleted successfully" });
 }
