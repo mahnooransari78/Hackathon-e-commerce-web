@@ -82,9 +82,10 @@ const Cart = () => {
 
  
 
-  function handleUpdateCart(_id: string, _quantity: string): void | PromiseLike<void> {
-    throw new Error("Function not implemented.");
-  }
+  const handleUpdateCart = async (_id: string, _quantity: string) => {
+    console.log(`Updating cart item ${_id} with quantity ${_quantity}`);
+  };
+  
 
   return (
     <div className="p-8 space-y-8 lg:flex lg:space-x-8">

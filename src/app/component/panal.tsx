@@ -6,7 +6,7 @@ import { RxPerson } from "react-icons/rx";
 import { GoHeart } from "react-icons/go";
 import { BsCart } from "react-icons/bs";
 import Link from 'next/link';
-import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from '@clerk/nextjs'
+import { SignedIn,  SignInButton, UserButton } from '@clerk/nextjs'
 
 
 const Panal = () => {
