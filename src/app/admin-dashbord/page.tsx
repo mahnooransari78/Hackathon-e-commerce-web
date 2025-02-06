@@ -1,13 +1,13 @@
-
 import Sidebar from "@/app/admin-dashbord/sidebar/page";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
- 
+export default function AdminDashboardPage() {
   return (
     <div className="flex">
       <Sidebar />
-      <main className="flex-1 p-6 bg-gray-100 min-h-screen">{children}</main>
-     
+      <main className="flex-1 p-6 bg-gray-100 min-h-screen">
+        <h1>Admin Dashboard</h1>
+        <p>Welcome to the admin dashboard!</p>
+      </main>
     </div>
   );
 }
