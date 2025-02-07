@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import Sidebar from "../sidebar/page";
+
 
 interface Order {
   id: number;
@@ -26,7 +26,7 @@ const OrderList = () => {
   return (
    <div className="flex gap-4">
     
-    <Sidebar />
+   
     <div className="lg:w-[1000px]">
     <header className="bg-gray-100 py-6 ">
           <div className="container mx-auto px-4">

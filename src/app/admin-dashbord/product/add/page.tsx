@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Sidebar from "../../sidebar/page";
+
 
 
 const AddProduct = () => {
@@ -18,7 +18,7 @@ const AddProduct = () => {
 
   return (
     <div className="flex gap-4">
-        <Sidebar />
+       
         <div>
           {/* Header */}
          <header className="bg-gray-100 mb-4 py-6">

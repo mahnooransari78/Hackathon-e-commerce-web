@@ -1,6 +1,5 @@
 'use client';
 import { ChangeEvent, useState } from 'react';
-import Sidebar from '../sidebar/page';
 interface Settings {
   siteName: string;
   contactEmail: string;
@@ -31,7 +30,7 @@ export default function SettingsManagement() {
 
   return (
     <div className="flex gap-4">
-        <Sidebar />
+       
     <div>
       {/* Header */}
       <header className="bg-gray-100 mb-4 py-6">

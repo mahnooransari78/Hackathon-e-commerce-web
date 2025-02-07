@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Sidebar from "../sidebar/page";
 import { client } from "@/sanity/lib/client"; 
 import { LiaEditSolid } from "react-icons/lia";
 import { RiDeleteBinLine } from "react-icons/ri";
@@ -46,7 +45,7 @@ const ProductList = () => {
 
   return (
     <div className="flex gap-4">
-      <Sidebar />
+      
       <div className="w-[1000px]">
          {/* Header */}
          <header className="bg-gray-100 mb-4 py-6">

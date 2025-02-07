@@ -1,5 +1,5 @@
 "use client";
-import Sidebar from "@/app/admin-dashbord/sidebar/page";
+
 import { useParams } from "next/navigation";
 
 const OrderDetails = () => {
@@ -19,7 +19,7 @@ const OrderDetails = () => {
 
   return (
     <div className="flex gap-4">
-        <Sidebar />
+     
         {/* Header */}
         <header className="bg-gray-100 mb-4 py-6">
           <div className="container mx-auto px-4">

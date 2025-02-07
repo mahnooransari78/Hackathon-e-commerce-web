@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Sidebar from "../sidebar/page";
+
 
 interface User {
   id: string;
@@ -34,7 +34,7 @@ const UsersPage = () => {
 
   return (
     <div className="flex gap-4">
-        <Sidebar />
+        
     <div>
       {/* Header */}
       <header className="bg-gray-100 mb-4 py-6">
